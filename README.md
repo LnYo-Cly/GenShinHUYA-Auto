@@ -1,0 +1,1 @@
+# GenShinHUYA-Auto
