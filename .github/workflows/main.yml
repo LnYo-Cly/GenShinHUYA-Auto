@@ -27,5 +27,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: python ./AutoClass.py
+        run: |
+          pip install bs4
+          python ./AutoClass.py
 
