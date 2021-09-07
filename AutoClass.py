@@ -13,29 +13,14 @@ headers={
     'referer': 'https://www.douyu.com/topic/yskbkb?rid=5239782'
 }
 data={
-    'taskId': '80236'
+    'taskId': '80237'
 }
 
 
 res = requests.post(url,headers=headers,data=data)
 i=1
 
-for id in range(80229,80245):
+for id in range(80237,80241):
     data['taskId']=str(id)
-    res = requests.post(url,headers=headers,data=data).json()
-    if res['error']==2002:
-        hasDone.append(id)
-    elif res['error']==2001:
-        falseDone.append(id)
-    elif res['error']==0:
-        receive.append(id)
-    elif res['error']==1004:
-        noneHave.append(id)
-    #print(i,": ",data['taskId'],res)
-    i+=1
-
-
-print("已完成：",hasDone,'\n','未完成：',falseDone,'\n',"领取成功：",receive,"\n",'发放完毕：',noneHave)
-
-
+    requests.post(url,headers=headers,data=data).json()
 
